@@ -19,5 +19,10 @@ describe TenGreenBottles do
       result = "Eight green bottles\nHanging on the wall\nEight green bottles\nHanging on the wall\nAnd if one green bottle\nShould accidentally fall\nThere'll be seven green bottles\nHanging on the wall"
       expect(song.lyrics(8)).to eq result
     end
+
+    it 'returns the penultimate verse to the song' do
+      result = "Two green bottles\nHanging on the wall\nTwo green bottles\nHanging on the wall\nAnd if one green bottle\nShould accidentally fall\nThere'll be one green bottle\nHanging on the wall"
+      expect(song.lyrics(2)).to eq result
+    end
   end
 end
