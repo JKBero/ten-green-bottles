@@ -4,15 +4,15 @@ class TenGreenBottles
 
   def initialize(bottles = 10)
     @bottles = bottles
+    @verses = []
   end
 
   def lyrics
-    array = []
     while @bottles > 0
-      @bottles == 1 ? array.push(final_verse) : array.push(verse)
+      @bottles == 1 ? @verses.push(final_verse) : @verses.push(verse)
       @bottles -= 1
     end
-    array.join("\n\n")
+    @verses.join("\n\n")
   end
 
   private

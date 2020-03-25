@@ -3,8 +3,6 @@ require 'ten_green_bottles'
 describe TenGreenBottles do
   describe '#lyrics' do
 
-    subject(:song) { TenGreenBottles.new }
-
     begin
       v1 = "Ten green bottles\nHanging on the wall\nTen green bottles\nHanging on the wall\nAnd if one green bottle\nShould accidentally fall\nThere'll be nine green bottles\nHanging on the wall"
       v2 = "Nine green bottles\nHanging on the wall\nNine green bottles\nHanging on the wall\nAnd if one green bottle\nShould accidentally fall\nThere'll be eight green bottles\nHanging on the wall"
@@ -37,6 +35,21 @@ describe TenGreenBottles do
     it 'returns all lyrics to the song, with a starting default of 10 bottles' do
       song = TenGreenBottles.new
       expect(song.lyrics).to eq v1+space+v2+space+v3+space+v4+space+v5+space+v6+space+v7+space+v8+space+v9+space+v10
+    end
+
+    it 'returns all the lyrics to the song, with a custom starting number' do
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include "Ninety-nine green bottles\nHanging on the wall"
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include "There'll be ninety-eight green bottles\nHanging on the wall"
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include "Twenty-five green bottles\nHanging on the wall"
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include "There'll be twenty-four green bottles\nHanging on the wall"
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include v9
+      song = TenGreenBottles.new(99)
+      expect(song.lyrics).to include v10
     end
   end
 end
