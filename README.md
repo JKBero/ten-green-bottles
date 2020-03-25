@@ -115,8 +115,8 @@ Edge cases:
 - Final verse changes entirely to singular and last 4 lines are different.
 
 Pseudo-code:
-- variable = verse, named ```verse```
-- separate variable used for final verse, named ```final_verse```
+- method to produce verse, named ```verse```
+- separate method to produce final verse, named ```final_verse```
 - ```x``` = current integer
 - ```x``` inserted in first four lines, then converted to string
 - ```x - 1``` is inserted into 5th line, then converted to string
@@ -128,7 +128,7 @@ Class model:
 
 | TenGreenBottles |
 | --- |
-| @bottle_number |
+| @bottles |
 | .lyrics |
 | .verse |
 | .final_verse |
